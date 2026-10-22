@@ -1,0 +1,6 @@
+{
+  "name": "Open-Source GIS Spatial Planner for Rural Renewable Energy Access",
+  "description": "Spatial GIS platform to assess rural off-grid solar-plus-storage mini-grid feasibility using high-resolution satellite imagery, AI rooftop analysis, and techno-economic modeling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
