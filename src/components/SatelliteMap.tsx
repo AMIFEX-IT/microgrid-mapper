@@ -25,7 +25,8 @@ import {
   ChevronLeft,
   Zap,
   Info,
-  Mountain
+  Mountain,
+  X
 } from 'lucide-react';
 import { LocationPreset, TechnoEconomicMetrics, ElevationProfileData, ElevationPoint, TransectDirection } from '../types';
 import { STATE_BOUNDARIES, getGeoLocationInfo } from '../utils/stateBoundaries';
@@ -96,6 +97,7 @@ export const SatelliteMap: React.FC<SatelliteMapProps> = ({
   const [activeLayerMode, setActiveLayerMode] = useState<MapLayerMode>('satellite');
   const [showLayerMenu, setShowLayerMenu] = useState<boolean>(false);
   const [showStateLines, setShowStateLines] = useState<boolean>(true);
+  const [showMiniCard, setShowMiniCard] = useState<boolean>(false);
   const [searchInput, setSearchInput] = useState<string>('');
   const [locationTag, setLocationTag] = useState<{ country: string; state: string }>({
     country: 'Nigeria',
@@ -419,6 +421,8 @@ export const SatelliteMap: React.FC<SatelliteMapProps> = ({
     if (!mapInstanceRef.current) return;
     const center = mapInstanceRef.current.getCenter();
     const bounds = mapInstanceRef.current.getBounds();
+
+    setShowMiniCard(true);
 
     onRunAssessment(
       {
@@ -872,7 +876,7 @@ export const SatelliteMap: React.FC<SatelliteMapProps> = ({
       )}
 
       {/* 11. Floating Mini Feasibility Card on Map when panel is collapsed */}
-      {isPanelCollapsed && currentMetrics && (
+      {isPanelCollapsed && currentMetrics && showMiniCard && (
         <div className="absolute bottom-10 right-4 z-20 pointer-events-auto max-w-sm bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-slate-200 space-y-2">
           <div className="flex items-center justify-between pb-1.5 border-b border-slate-100">
             <div>
@@ -881,13 +885,22 @@ export const SatelliteMap: React.FC<SatelliteMapProps> = ({
               </span>
               <h4 className="text-xs font-bold text-slate-900">{locationTag.state}, {locationTag.country}</h4>
             </div>
-            <button
-              onClick={onToggleCollapsePanel}
-              className="text-xs font-semibold text-sky-600 hover:text-sky-700 flex items-center gap-1"
-            >
-              <span>Full Details</span>
-              <ChevronLeft className="w-3.5 h-3.5" />
-            </button>
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={onToggleCollapsePanel}
+                className="text-xs font-semibold text-sky-600 hover:text-sky-700 flex items-center gap-1 cursor-pointer"
+              >
+                <span>Full Details</span>
+                <ChevronLeft className="w-3.5 h-3.5" />
+              </button>
+              <button
+                onClick={() => setShowMiniCard(false)}
+                className="p-1 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100 transition-colors ml-1 cursor-pointer"
+                title="Dismiss quick card"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-3 gap-2 text-center pt-1">

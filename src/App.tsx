@@ -146,8 +146,8 @@ export default function App() {
   // View Mode: 'assessment' (Single Site) vs 'comparison' (Side-by-Side)
   const [rightPanelTab, setRightPanelTab] = useState<'assessment' | 'comparison'>('assessment');
 
-  // Collapsible text panel state: when collapsed, only the map shows
-  const [isRightPanelCollapsed, setIsRightPanelCollapsed] = useState<boolean>(false);
+  // Collapsible text panel state: when collapsed, only the map shows (starts collapsed on initial load)
+  const [isRightPanelCollapsed, setIsRightPanelCollapsed] = useState<boolean>(true);
 
   // AI & Techno-Economic States
   const [isAnalyzing, setIsAnalyzing] = useState<boolean>(false);
@@ -183,11 +183,11 @@ export default function App() {
   const [showJsonRaw, setShowJsonRaw] = useState<boolean>(false);
   const [copiedSummary, setCopiedSummary] = useState<boolean>(false);
 
-  // Elevation Profile State
+  // Elevation Profile State (starts collapsed on initial load)
   const [elevationData, setElevationData] = useState<ElevationProfileData | null>(null);
   const [isLoadingElevation, setIsLoadingElevation] = useState<boolean>(false);
   const [elevationDirection, setElevationDirection] = useState<TransectDirection>('west-east');
-  const [showElevationProfile, setShowElevationProfile] = useState<boolean>(true);
+  const [showElevationProfile, setShowElevationProfile] = useState<boolean>(false);
 
   // Persist saved assessments
   useEffect(() => {
