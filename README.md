@@ -6,15 +6,6 @@
 
 The project focuses on making renewable energy planning more accessible, data-driven, and scalable, especially in communities where extending the conventional electricity grid may be challenging.
 
-\<p align="center">
-&#x20; \<a href="[https://microgrid-mapper.vercel.app/](https://microgrid-mapper.vercel.app/)">
-&#x20;   \<strong>🚀 Explore the Live Application\</strong>
-&#x20; \</a>
-&#x20; &nbsp; | &nbsp;
-&#x20; \<a href="[https://github.com/AMIFEX-IT/microgrid-mapper](https://github.com/AMIFEX-IT/microgrid-mapper)">
-&#x20;   \<strong>💻 View Source Code\</strong>
-&#x20; \</a>
-\</p>
 
 ---
 <img width="800" height="374" alt="Recording 2026-10-23 135446" src="https://github.com/user-attachments/assets/3c5399fc-b1f9-427b-ac1e-feadfd4ba8c9" />
@@ -305,7 +296,6 @@ Please check the repository for a license file before reusing, modifying, or dis
 
 ---
 
-\<p align="center">
+
 &#x20; \<strong>SunScout — Exploring smarter approaches to rural renewable energy access.\</strong>
-\</p>
-<img width="800" height="374" alt="Recording 2026-10-23 135446" src="https://github.com/user-attachments/assets/1bf0b69e-923b-4056-972f-d8180f94abb4" />
+
