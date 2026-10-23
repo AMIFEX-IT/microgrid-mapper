@@ -297,5 +297,5 @@ Please check the repository for a license file before reusing, modifying, or dis
 ---
 
 
-&#x20; \<strong>SunScout — Exploring smarter approaches to rural renewable energy access.\</strong>
+&#x20;  SunScout — Exploring smarter approaches to rural renewable energy access.
 
